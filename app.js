@@ -15,19 +15,23 @@ async function main(){
 app.get("/",(req,res)=>{
     res.end("Hi,I'm the root");
 });
-app.get("/testListing",async(req,res)=>{
-   let sampleListing= new listing({
-    title:"My New Villa",
-    description:"By the beach",
-    price:1200,
-    location:"Vizag",
-    country:"India",
-   });
-   await sampleListing.save();
-   console.log("Sample was saved");
-   res.end("Succefully Tested");
+app.get("/listing",aync (req,res)=>{
+   const allListings=await listing.find({});
+   res.render("index.ejs",{allListings});
+});
+// app.get("/testListing",async(req,res)=>{
+   //let sampleListing= new listing({
+    //title:"My New Villa",
+    //description:"By the beach",
+    //price:1200,
+    //location:"Vizag",
+    //country:"India",
+   //});
+   //await sampleListing.save();
+   //console.log("Sample was saved");
+   //res.end("Succefully Tested");
 
-})
+//})
 app.listen(8080,()=>{
     console.log("Server is listening to 8080");
 });
