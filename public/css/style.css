@@ -11,6 +11,8 @@ body{
 /* NAVBAR */
 .navbar-nav{
     height:5rem;
+    flex-direction: row !important;
+    align-items: center;
     background-color: white;
 }
 .fa-compass{
@@ -85,4 +87,20 @@ body{
 .add-btn{
     background-color : #fe424d !important;
     border: none !important;
+}
+/* EDIT PAGE */
+.edit-btn{
+    background-color : #fe424d !important;
+    border: none !important;
+}
+/* SHOW IMAGE */
+.show-img{
+    height:30vh;
+}
+.btns{
+    display: flex;
+}
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
 }
